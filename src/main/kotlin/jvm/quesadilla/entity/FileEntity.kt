@@ -7,12 +7,15 @@ import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.core.mapping.Field
 
 @Document(collection = "files")
-class FileEntity(
+sealed class FileEntity(
     @Id
     @Field("_id")
     var id: ObjectId? = null,
 
     @Field("path")
     @Indexed(unique = true)
-    val path: String
+    val path: String,
+
+    @Field("type")
+    val type: String
 )

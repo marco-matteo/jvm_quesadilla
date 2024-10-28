@@ -1,1 +1,1 @@
-rootProject.name = "demo"
+rootProject.name = "jvm_quesadilla"

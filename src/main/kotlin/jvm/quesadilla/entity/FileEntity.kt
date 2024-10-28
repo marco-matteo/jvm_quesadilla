@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.core.mapping.Field
 
 @Document(collection = "files")
-sealed class FileEntity(
+open class FileEntity(
     @Id
     @Field("_id")
     var id: ObjectId? = null,
@@ -17,5 +17,5 @@ sealed class FileEntity(
     val path: String,
 
     @Field("type")
-    val type: String
+    val type: String = "UNKNOWN"
 )

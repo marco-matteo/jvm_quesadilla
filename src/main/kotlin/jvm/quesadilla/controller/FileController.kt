@@ -6,12 +6,17 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import java.nio.charset.Charset
+import kotlin.io.encoding.Base64
+import kotlin.io.encoding.ExperimentalEncodingApi
 
 @RestController
 @RequestMapping("/file")
 class FileController(val service: FileService) {
-    @GetMapping("/{query}")
-    fun find(@PathVariable query: String): List<FileEntity> {
+    @OptIn(ExperimentalEncodingApi::class)
+    @GetMapping("/{queryBase64}")
+    fun find(@PathVariable queryBase64: String): List<FileEntity> {
+        val query = Base64.decode(queryBase64).toString(Charset.defaultCharset())
         return service.find(query)
     }
 }

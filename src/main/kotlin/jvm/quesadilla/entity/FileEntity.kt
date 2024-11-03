@@ -17,5 +17,9 @@ open class FileEntity(
     val path: String,
 
     @Field("type")
-    val type: String = "UNKNOWN"
-)
+    var type: String = "UNKNOWN"
+) {
+    override fun toString(): String {
+        return "FileEntity(id=$id, path='$path', type='$type')"
+    }
+}

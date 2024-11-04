@@ -2,7 +2,7 @@ package jvm.quesadilla.search
 
 object Search {
     fun search(query: String, data: List<String>, threshold: Int = 2) : List<String> {
-        return data.filter { levenshteinDistance(it, query) <= threshold }
+        return data.filter { levenshteinDistance(it.lowercase(), query.lowercase()) <= threshold }
     }
 
     private fun levenshteinDistance(source: CharSequence, target: CharSequence): Int {

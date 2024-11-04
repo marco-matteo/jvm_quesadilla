@@ -11,6 +11,16 @@ JVM_Quesadilla is a file searching tool that is  written in Kotlin. The UI let's
 
 ![uml](uml/firstUML.jpg)
 
+## Projekt starten
+1. Datenbank starten: 
+```bash
+docker compose up
+```
+2. Projekt Starten
+```bash
+./gradlew bootRun
+```
+
 ## Design Pattern
 Bei [Search.kt](src/main/kotlin/jvm/quesadilla/search/Search.kt) haben wir das Design Pattern Singleton benutzt.
 Wir haben uns dafür entschieden,

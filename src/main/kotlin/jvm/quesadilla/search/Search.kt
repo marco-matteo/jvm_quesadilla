@@ -1,8 +1,14 @@
 package jvm.quesadilla.search
 
+import jvm.quesadilla.entity.FileEntity
+
 object Search {
     fun search(query: String, data: List<String>, threshold: Int = 2) : List<String> {
         return data.filter { levenshteinDistance(it.lowercase(), query.lowercase()) <= threshold }
+    }
+
+    fun searchFile(query: String, data: List<FileEntity>, threshold: Int = 2) : List<FileEntity> {
+        return data.filter { levenshteinDistance(it.path.lowercase(), query.lowercase()) <= threshold }
     }
 
     private fun levenshteinDistance(source: CharSequence, target: CharSequence): Int {

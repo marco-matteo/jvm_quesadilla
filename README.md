@@ -20,3 +20,11 @@ weil es sich nur um Utility functions handelt.
 
 Dank Kotlin konnten wir dieses Pattern sehr einfach mit dem `object` Keyword umsetzen.
 
+## Sequenz Diagramm
+Dieses Sequenz Diagramm zeigt was passiert, wenn man im Frontend nach einem File sucht:
+![sequence_uml](uml/sequence.png)
+
+## UML Diagramm zum Ende des Projekts
+Man sieht, dass sich am Grundlegenden Plan nicht sehr viel geändert hat:
+
+MARCO -> TODO

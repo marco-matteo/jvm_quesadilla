@@ -7,10 +7,6 @@ JVM_Quesadilla is a file searching tool that is  written in Kotlin. The UI let's
 
 [Frontend](https://github.com/mariotraub/JVM_Quesadilla_Frontend)
 
-## UML Diagram at the beginning of the project
-
-![uml](uml/firstUML.jpg)
-
 ## Projekt starten
 1. Datenbank starten: 
 ```bash
@@ -22,6 +18,10 @@ docker compose up
 ```
 3. Frontend Starten
 https://github.com/mariotraub/JVM_Quesadilla_Frontend
+
+## UML Diagram at the beginning of the project
+
+![uml](uml/firstUML.jpg)
 
 ## Design Pattern
 Bei [Search.kt](src/main/kotlin/jvm/quesadilla/search/Search.kt) haben wir das Design Pattern Singleton benutzt.

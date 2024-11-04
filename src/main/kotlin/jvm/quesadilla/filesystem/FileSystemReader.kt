@@ -7,9 +7,12 @@ import jvm.quesadilla.entity.TextFile
 import java.io.File
 
 object FileSystemReader {
-    fun getFiles(baseDir: String): List<FileEntity> =
-        File(baseDir).canonicalFile.walkTopDown().filter { it.isFile }.map { file ->
-        when (file.extension) {
+    fun getFiles(baseDir: String): List<FileEntity> {
+        val baseFile = File(baseDir).canonicalFile
+
+        if (!baseFile.exists()) throw InvalidPathException("Base Directory does not exist")
+
+        return baseFile.walkTopDown().filter { it.isFile }.map { file -> when (file.extension) {
             in FileExtensions.CODE.extensions ->
                 CodeFile(null, file.path)
 
@@ -22,5 +25,6 @@ object FileSystemReader {
             else ->
                 FileEntity(null, file.path)
         }
-    }.toList()
+        }.toList()
+    }
 }

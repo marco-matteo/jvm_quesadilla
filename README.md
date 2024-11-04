@@ -20,6 +20,8 @@ docker compose up
 ```bash
 ./gradlew bootRun
 ```
+3. Frontend Starten
+https://github.com/mariotraub/JVM_Quesadilla_Frontend
 
 ## Design Pattern
 Bei [Search.kt](src/main/kotlin/jvm/quesadilla/search/Search.kt) haben wir das Design Pattern Singleton benutzt.
